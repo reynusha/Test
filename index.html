@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Messenger</title>
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/@tabler/icons@latest/iconfont/tabler-icons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">Quantum</h1>
+                <div class="header-actions">
+                    <button class="icon-btn" id="themeToggle">
+                        <i class="ti ti-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Tab -->
+            <div class="tab-content active" id="home-tab">
+                <div class="feed">
+                    <div class="compose-post">
+                        <div class="compose-header">
+                            <img src="" alt="Avatar" class="user-avatar sm" id="composeAvatar">
+                            <textarea placeholder="What's on your mind?" id="postTextarea"></textarea>
+                        </div>
+                        <div class="compose-actions">
+                            <button class="btn btn-primary" id="publishPost">Publish</button>
+                        </div>
+                    </div>
+                    <div class="posts-container" id="postsContainer"></div>
+                </div>
+            </div>
+
+            <!-- Chats Tab -->
+            <div class="tab-content" id="chats-tab">
+                <div class="chats-container">
+                    <div class="chats-sidebar">
+                        <div class="chats-search">
+                            <input type="text" placeholder="Search users..." id="chatSearch">
+                            <i class="ti ti-search"></i>
+                        </div>
+                        <div class="chats-list" id="chatsList"></div>
+                    </div>
+                    <div class="chat-window">
+                        <div class="chat-header">
+                            <div class="chat-user-info">
+                                <img src="" alt="Avatar" class="user-avatar sm">
+                                <div class="user-details">
+                                    <span class="username">Select a chat</span>
+                                    <span class="user-status">online</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="messages-container" id="messagesContainer"></div>
+                        <div class="message-input">
+                            <div class="input-actions">
+                                <button class="icon-btn" id="attachFile">
+                                    <i class="ti ti-paperclip"></i>
+                                </button>
+                                <button class="icon-btn" id="showStickers">
+                                    <i class="ti ti-mood-smile"></i>
+                                </button>
+                            </div>
+                            <input type="text" placeholder="Type a message..." id="messageInput">
+                            <button class="icon-btn btn-send" id="sendMessage">
+                                <i class="ti ti-send"></i>
+                            </button>
+                        </div>
+                        <div class="stickers-panel" id="stickersPanel">
+                            <div class="stickers-grid"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Tab -->
+            <div class="tab-content" id="profile-tab">
+                <div class="profile-container">
+                    <div class="profile-header">
+                        <div class="profile-cover"></div>
+                        <div class="profile-info">
+                            <img src="" alt="Avatar" class="user-avatar xl" id="profileAvatar">
+                            <div class="profile-details">
+                                <h2 class="display-name" id="profileDisplayName">User Name</h2>
+                                <span class="username" id="profileUsername">@username</span>
+                                <div class="verification-badge" id="verificationBadge">
+                                    <i class="ti ti-check"></i>
+                                </div>
+                                <p class="user-bio" id="profileBio">Bio will appear here</p>
+                                <div class="profile-stats">
+                                    <span class="stat">Posts: <strong id="postsCount">0</strong></span>
+                                    <span class="stat">Following: <strong>124</strong></span>
+                                    <span class="stat">Followers: <strong>89</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="profile-posts">
+                        <h3>Posts</h3>
+                        <div class="user-posts" id="userPosts"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="settings-container">
+                    <div class="settings-section">
+                        <h3>Edit Profile</h3>
+                        <div class="settings-form">
+                            <div class="form-group">
+                                <label for="editAvatar">Avatar URL</label>
+                                <input type="text" id="editAvatar" placeholder="https://example.com/avatar.jpg">
+                            </div>
+                            <div class="form-group">
+                                <label for="editDisplayName">Display Name</label>
+                                <input type="text" id="editDisplayName" placeholder="Your display name">
+                            </div>
+                            <div class="form-group">
+                                <label for="editUsername">Username</label>
+                                <input type="text" id="editUsername" placeholder="@username">
+                                <small class="form-hint">Unique identifier</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="editBio">Bio</label>
+                                <textarea id="editBio" placeholder="Tell something about yourself"></textarea>
+                            </div>
+                            <button class="btn btn-primary" id="saveProfile">Save Changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-tab="home-tab">
+                <i class="ti ti-home"></i>
+                <span>Home</span>
+            </button>
+            <button class="nav-btn" data-tab="chats-tab">
+                <i class="ti ti-message-circle"></i>
+                <span>Chats</span>
+            </button>
+            <button class="nav-btn" data-tab="profile-tab">
+                <i class="ti ti-user"></i>
+                <span>Profile</span>
+            </button>
+            <button class="nav-btn" data-tab="settings-tab">
+                <i class="ti ti-settings"></i>
+                <span>Settings</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="nftModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Username NFT</h3>
+                <button class="icon-btn close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>In the future, usernames can be turned into collectible NFTs and sold for the project's internal cryptocurrency.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" id="confirmUsernameChange">I Understand</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/chat.js"></script>
+    <script src="scripts/profile.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
