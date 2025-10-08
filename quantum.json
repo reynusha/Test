@@ -1,0 +1,86 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "@clanffys",
+      "displayName": "Alex Quantum",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+      "bio": "Founder of Quantum Messenger. Building the future of communication.",
+      "isVerified": true,
+      "role": "Project Creator",
+      "lastSeen": "2024-01-20T10:30:00Z",
+      "isOnline": true
+    },
+    {
+      "id": "2", 
+      "username": "@alice",
+      "displayName": "Alice Johnson",
+      "avatar": "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
+      "bio": "Digital designer and tech enthusiast",
+      "isVerified": false,
+      "role": "User",
+      "lastSeen": "2024-01-20T09:15:00Z",
+      "isOnline": false
+    },
+    {
+      "id": "3",
+      "username": "@bob",
+      "displayName": "Bob Smith", 
+      "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+      "bio": "Software developer",
+      "isVerified": false,
+      "role": "User",
+      "lastSeen": "2024-01-20T11:45:00Z",
+      "isOnline": true
+    }
+  ],
+  "chats": [
+    {
+      "id": "1",
+      "type": "direct",
+      "participants": ["@clanffys", "@alice"],
+      "lastMessage": {
+        "text": "Hey! How's the project going?",
+        "sender": "@alice", 
+        "timestamp": "2024-01-20T10:25:00Z"
+      },
+      "unreadCount": 0
+    },
+    {
+      "id": "2",
+      "type": "direct", 
+      "participants": ["@clanffys", "@bob"],
+      "lastMessage": {
+        "text": "Let's meet tomorrow to discuss the features",
+        "sender": "@clanffys",
+        "timestamp": "2024-01-20T09:30:00Z"
+      },
+      "unreadCount": 1
+    }
+  ],
+  "posts": [
+    {
+      "id": "1",
+      "author": "@clanffys",
+      "content": "Just launched Quantum Messenger! 🚀 A new era of communication begins now.",
+      "timestamp": "2024-01-20T08:00:00Z",
+      "likes": ["@alice", "@bob"],
+      "comments": [
+        {
+          "id": "1",
+          "author": "@alice",
+          "content": "Amazing work! The design looks stunning!",
+          "timestamp": "2024-01-20T08:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "author": "@alice", 
+      "content": "Working on some exciting new design concepts for Quantum. Can't wait to share more!",
+      "timestamp": "2024-01-19T16:30:00Z",
+      "likes": ["@clanffys"],
+      "comments": []
+    }
+  ]
+}
